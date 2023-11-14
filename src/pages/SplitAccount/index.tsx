@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { ScrollView, StyleSheet, Text, TextInput, View } from "react-native";
-import { Button } from "../components/rootComponents/Button";
-import { LightText, NormalText } from "../components/rootComponents/Texto";
-import { ValueDisplay } from "../components/ValueDisplay";
-import { TextAndInput } from "../components/TextAndInput";
-import { ValueField } from "../components/ValueField";
+import { ScrollView, StyleSheet, Text, View } from "react-native";
+import { Button } from "../../components/rootComponents/Button";
+import { NormalText } from "../../components/rootComponents/Texto";
+import { ValueDisplay } from "../../components/ValueDisplay";
+import { TextAndInput } from "../../components/TextAndInput";
+import { ValueField } from "../../components/ValueField";
+import { styles } from "./SplitAccount";
 
 export const SplitAccount = () => {
   const [billAmount, setBillAmount] = useState<string>("");
@@ -156,23 +157,3 @@ export const SplitAccount = () => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  buttonContainer: {
-    alignItems: "center",
-    justifyContent: "center",
-    padding: 24,
-  },
-  container: {
-    alignItems: "center",
-    marginTop: 20,
-  },
-  scrollView: {
-    height: "58%",
-  },
-  calculatedValue: {
-    marginTop: 5,
-    fontSize: 16,
-    textAlign: "center",
-  },
-});
