@@ -4,8 +4,10 @@ import {
   BoldText,
   NormalText,
   TitleText,
-} from "../components/rootComponents/Texto";
-import { Button } from "../components/rootComponents/Button";
+} from "../../components/rootComponents/Texto";
+import { Button } from "../../components/rootComponents/Button";
+import { ValueField } from "../../components/ValueField";
+import { styles } from "./TipCalculator";
 
 export const TipCalculator = () => {
   const [billAmount, setBillAmount] = useState<string>("");
@@ -50,19 +52,7 @@ export const TipCalculator = () => {
 
   return (
     <View>
-      <TitleText
-        as="Digite o valor da conta até agora:"
-        size={30}
-        margin={20}
-        color="#112D4E"
-      />
-      <TextInput
-        placeholder="Insira o valor da conta"
-        keyboardType="numeric"
-        style={styles.input}
-        value={billAmount}
-        onChangeText={handleValueInputChange}
-      />
+      <ValueField value={billAmount} onChange={handleValueInputChange} />
       {isFilled &&
         (!hasCouvert && !clickedNo ? (
           <View style={styles.couvert}>
@@ -106,32 +96,3 @@ export const TipCalculator = () => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    alignItems: "center",
-    marginTop: 20,
-  },
-  input: {
-    height: 40,
-    borderColor: "#3F72AF",
-    borderWidth: 1,
-    padding: 10,
-    fontSize: 18,
-    width: "80%",
-    alignSelf: "center",
-  },
-  couvert: {
-    alignItems: "center",
-    marginTop: 30,
-  },
-  couvertButton: {
-    flexDirection: "row",
-    justifyContent: "space-around",
-    width: "80%",
-    marginTop: 10,
-  },
-  couvertContainer: {
-    alignItems: "center",
-  },
-});

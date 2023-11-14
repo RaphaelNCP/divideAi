@@ -2,8 +2,9 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { HomePage } from "./pages/HomePage";
 import { SplitAccount } from "./pages/SplitAccount";
-import { TipCalculator } from "./pages/TipCalculator";
+
 import { AccountControl } from "./pages/AccountControl";
+import { TipCalculator } from "./pages/TipCalculator";
 
 const Stack = createNativeStackNavigator();
 
