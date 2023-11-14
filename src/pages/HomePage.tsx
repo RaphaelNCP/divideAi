@@ -24,18 +24,21 @@ export const HomePage = ({ navigation }: { navigation: any }) => {
       <Header />
       <View style={{ marginVertical: 20 }}>
         <Button
+          size={250}
           text="Controle de conta"
           onPress={() => navigation.navigate("AccountControl")}
         />
         <Button
+          size={250}
           text="Calcular gorjeta"
           onPress={() => navigation.navigate("TipCalculator")}
         />
         <Button
+          size={250}
           text="Dividir Conta"
           onPress={() => navigation.navigate("SplitAccount")}
         />
-        <Button text="Coming soon" />
+        <Button size={250} text="Coming soon" />
       </View>
       <StatusBar hidden />
     </View>
