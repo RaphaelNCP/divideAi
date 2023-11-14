@@ -1,13 +1,11 @@
 import React, { useState } from "react";
-import { View, TextInput, StyleSheet } from "react-native";
-import {
-  BoldText,
-  NormalText,
-  TitleText,
-} from "../../components/rootComponents/Texto";
+import { View } from "react-native";
+import { NormalText } from "../../components/rootComponents/Texto";
 import { Button } from "../../components/rootComponents/Button";
 import { ValueField } from "../../components/ValueField";
 import { styles } from "./TipCalculator";
+import { ValueDisplay } from "../../components/ValueDisplay";
+import { TextAndInput } from "../../components/TextAndInput";
 
 export const TipCalculator = () => {
   const [billAmount, setBillAmount] = useState<string>("");
@@ -68,20 +66,12 @@ export const TipCalculator = () => {
           </View>
         ) : (
           !clickedNo && (
-            <View style={styles.couvertContainer}>
-              <NormalText
-                as="Digite o valor do couvert:"
-                size={25}
-                padding={30}
-              />
-              <TextInput
-                placeholder="Insira o valor do couvert"
-                keyboardType="numeric"
-                style={styles.input}
-                value={couvertAmount}
-                onChangeText={handleCouvertInputChange}
-              />
-            </View>
+            <TextAndInput
+              title="Digite o valor do couvert:"
+              placeholder="Insira o valor do couvert"
+              value={couvertAmount}
+              onChange={handleCouvertInputChange}
+            />
           )
         ))}
       <View style={styles.container}>
@@ -90,8 +80,7 @@ export const TipCalculator = () => {
           text="Calcular 10% do garçom"
           onPress={handleCalculateTip}
         />
-        <NormalText as={`Valor total da conta:`} size={25} />
-        <BoldText as={`R$ ${tipAmount.toFixed(2)}`} size={25} />
+        <ValueDisplay text="Valor total da conta:" value={tipAmount} />
       </View>
     </View>
   );
